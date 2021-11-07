@@ -1,5 +1,5 @@
-SSH Host Keys and SSH CA Role
-=============================
+SSH CA Host Keys Role
+=====================
 
 Stuff junk in /etc/ssh/sshd_config.d/ when adding the HostCertificate config
 and HostKey values.
