@@ -1,0 +1,26 @@
+---
+
+# https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
+- name: Generate new SSH key(s)
+  local_action:
+    module: community.crypto.openssh_keypair
+    attributes: '{{ item.attributes | default(omit) }}'
+    backend: '{{ item.backend | default(omit) }}'  # default: auto
+    comment: '{{ item.comment | default(omit) }}'
+    force: '{{ item.force | default(omit) }}'  # default: no
+    group: '{{ item.group | default(omit) }}'
+    mode: '{{ item.mode | default(omit) }}'
+    owner: '{{ item.owner | default(omit) }}'
+    passphrase: '{{ item.passphrase | default(omit) }}'
+    path: '{{ item.path }}'  # required!!!
+    private_key_format: '{{ item.private_key_format | default(omit) }}'  # default: auto
+    regenerate: '{{ item.regenerate | default(omit) }}'  # default: partial_idempotence
+    selevel: '{{ item.selevel | default(omit) }}'
+    serole: '{{ item.serole | default(omit) }}'
+    setype: '{{ item.setype | default(omit) }}'
+    seuser: '{{ item.seuser | default(omit) }}'
+    size: '{{ item.size | default(omit) }}'
+    state: '{{ item.state | default(omit) }}'  # default: present
+    type: '{{ item.type | default(omit) }}'  # default: rsa
+    unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
+  loop: '{{ delta_keys }}'
