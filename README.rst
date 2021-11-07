@@ -11,3 +11,5 @@ config for an individual user.
 * https://docs.ansible.com/ansible/latest/collections/community/crypto/docsite/guide_ownca.html
 * https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
 * https://docs.ansible.com/ansible/latest/collections/community/general/ssh_config_module.html
+* https://gist.github.com/kawsark/a9443692a9e4a7b1c7df253995ce864c
+* https://www.acritelli.com/blog/ansible_certificate_ssh/
