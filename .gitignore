@@ -1,0 +1,5 @@
+.DS_Store
+.*.sw?
+*.py[coz]
+__pycache__/
+*.retry
