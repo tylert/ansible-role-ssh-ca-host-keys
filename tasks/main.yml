@@ -24,3 +24,5 @@
     type: '{{ item.type | default(omit) }}'  # default: rsa
     unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
   loop: '{{ delta_keys }}'
+
+# https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_cert_module.html
