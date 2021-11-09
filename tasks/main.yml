@@ -23,7 +23,40 @@
     state: '{{ item.state | default(omit) }}'  # default: present
     type: '{{ item.type | default(omit) }}'  # default: rsa
     unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
-  loop: '{{ delta_keys }}'
+  loop: '{{ delta_ssh_keypairs }}'
+
+# XXX FIXME TODO  Copy the appropriate keypairs to the remote hosts!!!
 
 # https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_cert_module.html
-# https://github.com/ansible-collections/community.crypto/issues/96#issuecomment-701578598
+- name: Generate new SSH certificate(s)
+  local_action:
+    module: community.crypto.openssh_cert
+    attributes: '{{ item.attributes | default(omit) }}'
+    force: '{{ item.force | default(omit) }}'  # default: no
+    group: '{{ item.group | default(omit) }}'
+    identifier: '{{ item.identifier | default(omit) }}'
+    mode: '{{ item.mode | default(omit) }}'
+    options: '{{ item.options | default(omit) }}'
+    owner: '{{ item.owner | default(omit) }}'
+    path: '{{ item.path }}'  # required!!!
+    pkcs11_provider: '{{ item.pkcs11_provider | default(omit) }}'
+    principals: '{{ item.principals | default(omit) }}'
+    public_key: '{{ item.public_key | default(omit) }}'  # required, if state is present!!!
+    regenerate: '{{ item.regenerate | default(omit) }}'  # default: partial_idempotence
+    selevel: '{{ item.selevel | default(omit) }}'
+    serial_number: '{{ item.serial_number | default(omit) }}'  # default: 0
+    serole: '{{ item.serole | default(omit) }}'
+    setype: '{{ item.setype | default(omit) }}'
+    seuser: '{{ item.seuser | default(omit) }}'
+    signature_algorithm: '{{ item.signature_algorithm | default(omit) }}'  # default: depends...
+    signing_key: '{{ item.signing_key | default(omit) }}'  # required, if state is present!!!
+    state: '{{ item.state | default(omit) }}'  # default: present
+    type: '{{ item.type | default(omit) }}'  # 'host' or 'user';  required, if state is present!!!
+    unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
+    use_agent: '{{ item.use_agent | default(omit) }}'  # default: no
+    valid_at: '{{ item.valid_at | default(omit) }}'
+    valid_from: '{{ item.valid_from | default(omit) }}'  # required, if state is present!!!
+    valid_to: '{{ item.valid_to | default(omit) }}'  # required, if state is present!!!
+  loop: '{{ delta_ssh_certs }}'
+
+# XXX FIXME TODO  Copy the certs to the remote hosts!!!

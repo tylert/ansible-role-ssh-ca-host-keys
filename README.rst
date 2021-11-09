@@ -13,3 +13,4 @@ config for an individual user.
 * https://docs.ansible.com/ansible/latest/collections/community/general/ssh_config_module.html
 * https://gist.github.com/kawsark/a9443692a9e4a7b1c7df253995ce864c
 * https://www.acritelli.com/blog/ansible_certificate_ssh/
+* https://github.com/ansible-collections/community.crypto/issues/96#issuecomment-701578598
