@@ -60,3 +60,5 @@
   loop: '{{ delta_ssh_certs }}'
 
 # XXX FIXME TODO  Copy the certs to the remote hosts!!!
+
+# XXX FIXME TODO  Fix up the /etc/ssh/sshd_config for certificate magic!!!
