@@ -1,9 +1,11 @@
 ---
 
 # https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_keypair_module.html
-- name: Generate new SSH key(s)
-  local_action:
-    module: community.crypto.openssh_keypair
+- name: Configure SSH keypair(s)
+# local_action:
+#   module: community.crypto.openssh_keypair
+# delegate_to: localhost
+  community.crypto.openssh_keypair:
     attributes: '{{ item.attributes | default(omit) }}'
     backend: '{{ item.backend | default(omit) }}'  # default: auto
     comment: '{{ item.comment | default(omit) }}'
@@ -28,9 +30,11 @@
 # XXX FIXME TODO  Copy the appropriate keypairs to the remote hosts!!!
 
 # https://docs.ansible.com/ansible/latest/collections/community/crypto/openssh_cert_module.html
-- name: Generate new SSH certificate(s)
-  local_action:
-    module: community.crypto.openssh_cert
+- name: Configure SSH certificate(s)
+# local_action:
+#   module: community.crypto.openssh_cert
+# delegate_to: localhost
+  community.crypto.openssh_cert:
     attributes: '{{ item.attributes | default(omit) }}'
     force: '{{ item.force | default(omit) }}'  # default: no
     group: '{{ item.group | default(omit) }}'
