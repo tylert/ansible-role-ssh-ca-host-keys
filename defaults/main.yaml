@@ -1,4 +1,6 @@
 ---
 
-delta_ssh_keypairs: []
+delta_ssh_keys: []
+delta_ssh_keys_remote: []
 delta_ssh_certs: []
+delta_ssh_certs_remote: []

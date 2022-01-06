@@ -25,7 +25,7 @@
     state: '{{ item.state | default(omit) }}'  # default: present
     type: '{{ item.type | default(omit) }}'  # default: rsa
     unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
-  loop: '{{ delta_ssh_keypairs }}'
+  loop: '{{ delta_ssh_keys }}'
 
 # XXX FIXME TODO  Copy the appropriate keypairs to the remote hosts!!!
 
@@ -55,7 +55,7 @@
     signature_algorithm: '{{ item.signature_algorithm | default(omit) }}'  # default: depends...
     signing_key: '{{ item.signing_key | default(omit) }}'  # required, if state is present!!!
     state: '{{ item.state | default(omit) }}'  # default: present
-    type: '{{ item.type | default(omit) }}'  # 'host' or 'user';  required, if state is present!!!
+    type: '{{ item.type | default(omit) }}'  # required, if state is present!!!
     unsafe_writes: '{{ item.unsafe_writes | default(omit) }}'  # default: no
     use_agent: '{{ item.use_agent | default(omit) }}'  # default: no
     valid_at: '{{ item.valid_at | default(omit) }}'
