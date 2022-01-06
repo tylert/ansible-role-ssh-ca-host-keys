@@ -52,10 +52,10 @@ Variables::
         identifier: magenta
         principals: magenta,printer02
 
-* https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
-* https://docs.ansible.com/ansible/latest/collections/community/crypto/docsite/guide_ownca.html
-* https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
-* https://docs.ansible.com/ansible/latest/collections/community/general/ssh_config_module.html
-* https://gist.github.com/kawsark/a9443692a9e4a7b1c7df253995ce864c
 * https://www.acritelli.com/blog/ansible_certificate_ssh/
+* https://berndbausch.medium.com/ssh-certificates-a45bdcdfac39
+* https://gist.github.com/kawsark/a9443692a9e4a7b1c7df253995ce864c
 * https://github.com/ansible-collections/community.crypto/issues/96#issuecomment-701578598
+* https://docs.ansible.com/ansible/latest/collections/community/crypto/docsite/guide_ownca.html
+* https://docs.ansible.com/ansible/latest/collections/community/general/ssh_config_module.html
+* https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
